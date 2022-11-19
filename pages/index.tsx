@@ -13,7 +13,7 @@ const Home = () => {
   const total = subTotal + tax;
 
   return (
-    <div className="container mx-auto p-3">
+    <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold uppercase my-6">Cart</h1>
       <div className="border-t">
         {cartData.map((item, i) => (

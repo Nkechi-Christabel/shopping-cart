@@ -116,7 +116,9 @@ const CartItems: React.FC<IProps> = ({
         <div>
           <p className="font-semibold">{item.name.split(" ")[0]}</p>
           <p className="font-light">{item.name.split(" ").slice(1)}</p>
-          <p>{`${item.prices.currency?.symbol}${item.prices.amount}`}</p>
+          <p>{`${item.prices.currency?.symbol}${item.prices.amount.toFixed(
+            2
+          )}`}</p>
           <p className="font-semibold pt-3">size:</p>
           {item.attributes.map((attr) =>
             attr.items.map((val) => (
@@ -158,19 +160,19 @@ const CartItems: React.FC<IProps> = ({
               alt={item.name}
               width={100}
               height={120}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover mt-3"
             />
             <div className="flex text-white absolute bottom-3 right-2">
               <span
                 ref={prevRef}
-                className=""
+                className="inline-block mr-2"
                 data-index={item.id}
                 onClick={() => handlePrev()}
               >
                 <HiChevronLeft className="border cursor-pointer bg-slate-700 w-5 h-6" />
               </span>
               <span
-                className=" "
+                className="inline-block"
                 data-index={item.id}
                 ref={nextRef}
                 onClick={() => handleNext(item)}
