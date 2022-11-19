@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div className="container mx-auto p-3">
-      <h1 className="text-lg font-bold my-6">Cart</h1>
+      <h1 className="text-2xl font-bold uppercase my-6">Cart</h1>
       <div className="border-t">
         {cartData.map((item, i) => (
           <CartItems
